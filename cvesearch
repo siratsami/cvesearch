@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo ""
+echo "        CVESEARCH BY B4GG3R"
+echo '   Usage: cvesearch "Wordpress 4.1"'
+echo " YouTube: B4GG3R Twitter: siratsami71"
+echo ""
+
+curl -s -G --data-urlencode "keyword=$1" "https://cve.mitre.org/cgi-bin/cvekey.cgi" | awk -F'"top">' '{print $2}' | sort -u
